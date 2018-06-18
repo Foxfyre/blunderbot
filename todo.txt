@@ -1,0 +1,17 @@
+List of things to do because brain is scattered everywhere
+
+Name generator - Done
+3rd Edition dice roller - Done
+Help file
+Appearance generator
+Stat generator
+dice roller
+
+
+Prefix changer, unnecessary atm but im going to fix that now. - done
+
+Need to make help file for all commands
+
+
+
+
