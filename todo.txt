@@ -2,11 +2,14 @@ List of things to do because brain is scattered everywhere
 
 Name generator - Done
 3rd Edition dice roller - Done
-Help file
+Help file - Up to date
 Appearance generator
 Stat generator
-dice roller
-
+dice roller - Will stick with RPbot for now
+Links list - add the ability to display a specific list - Done
+Podcast list - Done
+Greeter - take over greeting responsibilities from mee6 (greetbot) - almost         done. finalize wording with Matt
+Combat / Profile
 
 Prefix changer, unnecessary atm but im going to fix that now. - done
 
@@ -15,3 +18,105 @@ Need to make help file for all commands
 
 
 
+  
+  
+  
+  
+/*  
+  
+  // `m` is a message object that will be passed through the filter function
+const filter = m => m.content.includes('bb!');
+
+const collector = message.channel.createMessageCollector(filter, {maxMatches: 1,  time: 15000 });
+  
+  
+message.channel.send("Please select a race from the available races");    
+
+collector.on('collect', m => {
+  if (!message.author.bot) {
+    message.channel.send(m.content);
+    if (races.map((races) => {return races == m.content;})) {
+      message.channel.send(`Content ${m.content}`);
+      let raceArg = m.content.split(" ");
+      message.channel.send(`raceArg ${raceArg}`);
+      playerRace = raceArg[1]; 
+    }
+    console.log(`Collected ${m.content}`);
+    console.log(`Chosen race is ${playerRace}`);
+  }});
+  
+  setTimeout(blankTimeout() ,15000);
+  
+collector.on('end', collected => {
+    message.channel.send(`Your race of ${playerRace} and gender of ${playerGender} has been recorded`);
+});  
+  
+message.channel.send("Please select a gender from the available genders");   
+  */
+  /*
+  collector.on('collect', m => {
+  if (!message.author.bot) {
+    message.channel.send(m.content);
+    if (genders.map((gender) => {return genders == m.content;})) {
+      message.channel.send(`Content ${m.content}`);
+      let genderArg = m.content.split(" ");
+      message.channel.send(`raceArg ${genderArg}`);
+      playerGender = genderArg[1]; 
+    }
+    console.log(`Collected ${m.content}`);
+    console.log(`Chosen gender is ${playerGender}`);
+  }});
+
+collector.on('end', collected => {
+  message.channel.send(`Your race of ${playerRace} and gender of ${playerGender} has been recorded`);
+});   
+
+          
+}
+  
+function blankTimeout() {
+  return timeOut = "0";
+}
+  
+  
+  
+  
+ 
+  // `m` is a message object that will be passed through the filter function
+const filter = m => m.content.includes('discord');
+const collector = message.channel.createMessageCollector(filter, { time: 15000 });
+
+collector.on('collect', m => {
+    console.log(`Collected ${m.content}`);
+});
+
+collector.on('end', collected => {
+    console.log(`Collected ${collected.size} items`);
+});
+  
+  
+  
+  const quiz = require('./quiz.json');
+  const item = quiz[Math.floor(Math.random() * quiz.length)];
+  const filter = response => {
+    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+};
+
+  message.author.send(item.question).then(() => {
+    message.channel.awaitMessages(filter, { maxMatches: 1, time: 30000, errors: ['time'] })
+        .then(collected => {
+            message.channel.send(`${collected.first().author} got the correct answer!`);
+        })
+        .catch(collected => {
+            message.channel.send('Looks like nobody got the answer this time.');
+        });
+});
+  
+  
+  // Await !vote messages
+const filter = m => m.content.startsWith('!vote');
+// Errors: ['time'] treats ending because of the time limit as an error
+channel.awaitMessages(filter, { max: 4, time: 60000, errors: ['time'] })
+  .then(collected => console.log(collected.size))
+  .catch(collected => console.log(`After a minute, only ${collected.size} out of 4 voted.`
+  */

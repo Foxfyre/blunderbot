@@ -46,7 +46,7 @@ exports.run = (client, message, args, config, fs) => {
             nameConnector = "";
             //return nameConnector;
         }
-        console.log(nameConnector);
+        //console.log(nameConnector);
         let nameFirst = (name[args[0]]["element"][randomElement]) + nameConnector + (name[args[0]][args[1]][randomFirst]);        
         let nameLast = name[args[0]]["surname"][randomLast];
         elfName = nameFirst + " " + nameLast;
