@@ -20,10 +20,8 @@ fs.readdir("./events/", (err, files) => {
 client.on("message", message => {
     if (message.author.bot) return;
     if (message.content.indexOf(config.prefix) !== 0) return;
-
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
-
     try {
         let commandFile = require(`./commands/${command}.js`);
         commandFile.run(client, message, args, config, fs);
@@ -33,10 +31,10 @@ client.on("message", message => {
 });
 
 //for event testing
-/*
-client.on('message', msg => {
+
+/*client.on('message', msg => {
     if (msg.author.id === config.ownerID  ) {
-      client.emit('guildMemberRemove', msg.member);
+      client.emit('guildMemberAdd', msg.member);
     }
     else {
       return;

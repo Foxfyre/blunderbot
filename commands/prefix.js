@@ -1,4 +1,4 @@
-exports.run = (client, message, args, config, fs) => {
+/*exports.run = (client, message, args, config, fs) => {
     if (message.author.id !== config.ownerID) {
         message.channel.send("You aren't the boss of me " + message.author.username + "!");
         return;
@@ -14,4 +14,4 @@ exports.run = (client, message, args, config, fs) => {
 
 //exports.run = (client, message, args) => {
 //    message.channel.send("success").catch(console.error);
-//}
+//}*/

@@ -8,115 +8,16 @@ Stat generator
 dice roller - Will stick with RPbot for now
 Links list - add the ability to display a specific list - Done
 Podcast list - Done
-Greeter - take over greeting responsibilities from mee6 (greetbot) - almost         done. finalize wording with Matt
+Greeter - take over greeting responsibilities from mee6 (greetbot) - almost         done. finalize wording with Matt - Done
 Combat / Profile
-
+Ensure all commands are case neutral
+Bot command channel - Up to date for BB
 Prefix changer, unnecessary atm but im going to fix that now. - done
 
-Need to make help file for all commands
+1d8 + 4d6 - Roll one octahedron and four hexahedrons.
+1d20+5 # Grog attacks - Roll dice with a comment. Done
+2d6>=5 - Roll two hexahedrons and take only the ones that turned greater or equal to five (aka difficulty check). Prints the number of successes.
+3d6! - Exploding dice.
+1d10!>9 - Explode nine and ten.(edited)
 
-
-
-
-  
-  
-  
-  
 /*  
-  
-  // `m` is a message object that will be passed through the filter function
-const filter = m => m.content.includes('bb!');
-
-const collector = message.channel.createMessageCollector(filter, {maxMatches: 1,  time: 15000 });
-  
-  
-message.channel.send("Please select a race from the available races");    
-
-collector.on('collect', m => {
-  if (!message.author.bot) {
-    message.channel.send(m.content);
-    if (races.map((races) => {return races == m.content;})) {
-      message.channel.send(`Content ${m.content}`);
-      let raceArg = m.content.split(" ");
-      message.channel.send(`raceArg ${raceArg}`);
-      playerRace = raceArg[1]; 
-    }
-    console.log(`Collected ${m.content}`);
-    console.log(`Chosen race is ${playerRace}`);
-  }});
-  
-  setTimeout(blankTimeout() ,15000);
-  
-collector.on('end', collected => {
-    message.channel.send(`Your race of ${playerRace} and gender of ${playerGender} has been recorded`);
-});  
-  
-message.channel.send("Please select a gender from the available genders");   
-  */
-  /*
-  collector.on('collect', m => {
-  if (!message.author.bot) {
-    message.channel.send(m.content);
-    if (genders.map((gender) => {return genders == m.content;})) {
-      message.channel.send(`Content ${m.content}`);
-      let genderArg = m.content.split(" ");
-      message.channel.send(`raceArg ${genderArg}`);
-      playerGender = genderArg[1]; 
-    }
-    console.log(`Collected ${m.content}`);
-    console.log(`Chosen gender is ${playerGender}`);
-  }});
-
-collector.on('end', collected => {
-  message.channel.send(`Your race of ${playerRace} and gender of ${playerGender} has been recorded`);
-});   
-
-          
-}
-  
-function blankTimeout() {
-  return timeOut = "0";
-}
-  
-  
-  
-  
- 
-  // `m` is a message object that will be passed through the filter function
-const filter = m => m.content.includes('discord');
-const collector = message.channel.createMessageCollector(filter, { time: 15000 });
-
-collector.on('collect', m => {
-    console.log(`Collected ${m.content}`);
-});
-
-collector.on('end', collected => {
-    console.log(`Collected ${collected.size} items`);
-});
-  
-  
-  
-  const quiz = require('./quiz.json');
-  const item = quiz[Math.floor(Math.random() * quiz.length)];
-  const filter = response => {
-    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
-};
-
-  message.author.send(item.question).then(() => {
-    message.channel.awaitMessages(filter, { maxMatches: 1, time: 30000, errors: ['time'] })
-        .then(collected => {
-            message.channel.send(`${collected.first().author} got the correct answer!`);
-        })
-        .catch(collected => {
-            message.channel.send('Looks like nobody got the answer this time.');
-        });
-});
-  
-  
-  // Await !vote messages
-const filter = m => m.content.startsWith('!vote');
-// Errors: ['time'] treats ending because of the time limit as an error
-channel.awaitMessages(filter, { max: 4, time: 60000, errors: ['time'] })
-  .then(collected => console.log(collected.size))
-  .catch(collected => console.log(`After a minute, only ${collected.size} out of 4 voted.`
-  */

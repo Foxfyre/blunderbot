@@ -25,7 +25,7 @@ exports.run = (client, message, args) => {
         const w = ["success","success","boon","blank","blank","blank"];
         const bk = ["challenge","challenge","bane","blank","blank","blank"];
         
-
+    // map through the rolls. This sets wwhat colour dice if only 1 letter, its not black or blue, if 2 letters, its black and blue
     args.map(function (roll) {
         diceCount = roll[0];
         if (roll[2] == null) {
@@ -35,11 +35,12 @@ exports.run = (client, message, args) => {
             diceType = roll[1] + roll[2];
             diceType = eval(diceType);
         }
-
+    // I can delete the below line and replace all variables with the diceType.length. 
     let diceTypeLength = diceType.length;
     for (let i = 0; i < diceCount; i++) {
       let randomNumber = Math.floor(Math.random() * (diceTypeLength));
       result = diceType[randomNumber] + "";
+      // Exploding Dice
       if (result === "righteous") {
         for (let i = 0; i < 1; i++) {
           message.channel.send("righteous!");
